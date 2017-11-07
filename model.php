@@ -12,9 +12,10 @@ class Comments
         }
     }
 
-    public function getComments()
+    public function getComments($page)
     {
-        $query = "SELECT name, text, time FROM comments ORDER BY id ASC"; //запрос комментариев из базы
+        $offset = $page * 10;
+        $query = "SELECT name, text, time FROM comments ORDER BY id ASC LIMIT $offset, 10"; //запрос комментариев из базы
         $stmt = $this->pdo->query($query);
         return $stmt;
     }
@@ -29,6 +30,15 @@ class Comments
             'comment' => $comment,
             'time' => $time
         ]);
+    }
+
+    public function getCountPagesLink()
+    {
+        $query = "SELECT COUNT(*) FROM comments"; //запрос комментариев из базы
+        $stmt = $this->pdo->query($query);
+        $countComments = $stmt->fetch();
+        $countPages = ceil($countComments[0]/10);
+        return $countPages;
     }
 }
 

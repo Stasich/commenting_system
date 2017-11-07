@@ -21,10 +21,19 @@
 </div>
 <section>
     <div class="content">
-
+    <nav class = "clearfix">
+        <ul class = "pages">
+            <li>Страницы: </li>
+        <?php for ($i = 0; $i < $countPages; $i++ ) {
+            if ( $selectedPage !== $i )
+                echo "<li><a href = '{$_SERVER['PHP_SELF']}?page={$i}'>" . ($i+1) . "</a></li>";
+            else
+                echo "<li>" . ($i+1) . "</li>";
+        } ?>
+        </ul>
+    </nav>
 <?php
 while ($row = $stmt->fetch()) {
-//foreach ( $pdo->query($query) as $row ){
     $time = date('G:i d.m.Y', $row['time']);
     echo <<<END
 <div class = "comment">
@@ -43,10 +52,21 @@ while ($row = $stmt->fetch()) {
 END;
         };
 ?>
+        <nav class = "clearfix">
+            <ul class = "pages">
+                <li>Страницы: </li>
+                <?php for ($i = 0; $i < $countPages; $i++ ) {
+                    if ( $selectedPage !== $i )
+                        echo "<li><a href = '{$_SERVER['PHP_SELF']}?page={$i}'>" . ($i+1) . "</a></li>";
+                    else
+                        echo "<li>" . ($i+1) . "</li>";
+                } ?>
+            </ul>
+        </nav>
 <br>
 <hr>
 <div class="form">
-    <form action="index.php" method="POST">
+    <form action='<?php echo $_SERVER['PHP_SELF']."?page=".($countPages-1) ?>' method="POST">
         <label>Ваше имя</label><br><br>
         <input type="text" size="26" name="first_name" required><br><br>
         <label>Ваш комментарий</label><br><br>

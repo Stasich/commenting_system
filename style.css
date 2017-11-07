@@ -8,6 +8,14 @@ body {
     height: 225px;
     background: #f9f9f9;
 }
+
+.clearfix:after {
+    content: '';
+    display: table;
+    width: 100%;
+    clear: both;
+}
+
 .info {
     width: 400px;
     float: left;
@@ -46,4 +54,25 @@ section {
 .content {
     width: 960px;
     margin: 0 auto;
+    overflow: auto;
+}
+
+.pages {
+    margin: 0;
+    padding: 0;
+}
+
+.pages li {
+    float: left;
+    list-style-type: none;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.pages a {
+    font-size: 14px;
+}
+
+nav {
+    margin-top: 5px;
 }

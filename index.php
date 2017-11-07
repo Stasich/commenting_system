@@ -15,6 +15,9 @@ if ($_POST) {                                       //если есть данн
 }
 $_SESSION['token'] = $token;
 
-$stmt = $comments->getComments();
+$selectedPage = ( isset($_GET['page']) ) ? intval( $_GET['page'] ) : 0 ;
+$stmt = $comments->getComments( $selectedPage );
+$countPages = $comments->getCountPagesLink();
+
 
 require_once ("html.php");        // html страничка
