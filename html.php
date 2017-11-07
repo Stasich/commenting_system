@@ -34,24 +34,20 @@
     </nav>
 <?php
 while ($row = $stmt->fetch()) {
-    $time = date('G:i d.m.Y', $row['time']);
-    echo <<<END
+    $time = date('G:i d.m.Y', $row['time']); ?>
 <div class = "comment">
             <div class = "name">
-                $row[name]
+                <?php echo $row['name'] ?>
             </div>
             <div class = "date">
-                $time
+                <?php echo $time ?>
             </div>
             <div style = "clear: both"></div>
             <div class = "text">
-                <p>$row[text]</p>
+                <p><?php echo $row['text'] ?></p>
             </div>
         </div>
-        
-END;
-        };
-?>
+<?php }; ?>
         <nav class = "clearfix">
             <ul class = "pages">
                 <li>Страницы: </li>
