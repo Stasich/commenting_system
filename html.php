@@ -17,11 +17,9 @@
                 <p style="font-size: 44px; margin: 0;">Комментарии</p>
             </div>
         </div>
-        <div class="logo">
-        </div>
     </div>
 </div>
-<div class="comments">
+<section>
     <div class="content">
 
 <?php
@@ -60,7 +58,7 @@ END;
 </div>
 <div style="clear:both"></div>
 </div>
-</div>
+</section>
 <div class="footer">
     <div class="content">
         footer
