@@ -33,7 +33,7 @@
         </ul>
     </nav>
 <?php
-while ($row = $stmt->fetch()) {
+foreach ($arrComments as $row ) {
     $time = date('G:i d.m.Y', $row['time']); ?>
 <div class = "comment">
             <div class = "name">

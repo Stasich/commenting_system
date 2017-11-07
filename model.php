@@ -17,7 +17,8 @@ class Comments
         $offset = $page * 10;
         $query = "SELECT name, text, time FROM comments ORDER BY id ASC LIMIT $offset, 10"; //запрос комментариев из базы
         $stmt = $this->pdo->query($query);
-        return $stmt;
+        $arrComments = $stmt->fetchAll();
+        return $arrComments;
     }
 
     public function insertComment( $name, $comment )

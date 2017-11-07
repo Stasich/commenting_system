@@ -16,7 +16,7 @@ if ($_POST) {                                       //если есть данн
 $_SESSION['token'] = $token;
 
 $selectedPage = ( isset($_GET['page']) ) ? intval( $_GET['page'] ) : 0 ;
-$stmt = $comments->getComments( $selectedPage );
+$arrComments = $comments->getComments( $selectedPage );
 $countPages = $comments->getCountPagesLink();
 
 
