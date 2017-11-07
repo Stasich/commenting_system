@@ -17,7 +17,6 @@ body {
 }
 
 .info {
-    width: 400px;
     float: left;
 }
 .logo {
@@ -75,4 +74,16 @@ section {
 
 nav {
     margin-top: 5px;
+}
+.contacts {
+    padding-top: 40px;
+    font-size: 10px;
+    font-weight: bold;
+}
+.nameComment {
+    margin-top: 80px;
+}
+.nameComment p {
+    font-size: 44px;
+    margin: 0;
 }

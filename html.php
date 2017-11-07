@@ -9,12 +9,12 @@
 <div class="header">
     <div class="content">
         <div class="info">
-            <div style="padding-top: 40px; font-size: 10px; font-weight: bold;">
+            <div class="contacts">
                 <p>Телефон: (999) 999-99-99</p>
                 <p>Email: info@test</p>
             </div>
-            <div style="margin-top: 80px;">
-                <p style="font-size: 44px; margin: 0;">Комментарии</p>
+            <div class = "nameComment">
+                <p>Простая система комментариев</p>
             </div>
         </div>
     </div>
@@ -36,17 +36,18 @@
 foreach ($arrComments as $row ) {
     $time = date('G:i d.m.Y', $row['time']); ?>
 <div class = "comment">
-            <div class = "name">
-                <?php echo $row['name'] ?>
-            </div>
-            <div class = "date">
-                <?php echo $time ?>
-            </div>
-            <div style = "clear: both"></div>
-            <div class = "text">
-                <p><?php echo $row['text'] ?></p>
-            </div>
+    <div class = "clearfix">
+        <div class = "name">
+            <?php echo $row['name'] ?>
         </div>
+        <div class = "date">
+            <?php echo $time ?>
+        </div>
+    </div>
+    <div class = "text">
+        <p><?php echo $row['text'] ?></p>
+    </div>
+</div>
 <?php }; ?>
         <nav class = "clearfix">
             <ul class = "pages">
@@ -72,7 +73,6 @@ foreach ($arrComments as $row ) {
         <input type="submit" value="Отправить">
     </form>
 </div>
-<div style="clear:both"></div>
 </div>
 </section>
 <div class="footer">
